@@ -41,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->close();
             $conn->close();
         }
+        else {
+            echo "<script>alert('Semua data harus diisi'); window.history.back();</script>";
+        }
     }
 }
 ?>
@@ -122,22 +125,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Add New Armada</h1>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
         <label for="nama_kendaraan">Nama Kendaraan:</label><br>
-        <input type="text" id="nama_kendaraan" name="nama_kendaraan" value="<?php echo $nama_kendaraan; ?>"><br>
+        <input type="text" id="nama_kendaraan" name="nama_kendaraan" value="<?php echo $nama_kendaraan; ?>" required><br>
 
         <label for="jenis">Jenis Kendaraan:</label><br>
-        <input type="text" id="jenis" name="jenis" value="<?php echo $jenis; ?>"><br>
+        <input type="text" id="jenis" name="jenis" value="<?php echo $jenis; ?>" required><br>
 
         <label for="gambar">Gambar:</label><br>
-        <input type="file" id="gambar" name="gambar"><br>
+        <input type="file" id="gambar" name="gambar" required><br>
 
         <label for="kapasitas">Kapasitas:</label><br>
-        <input type="number" id="kapasitas" name="kapasitas" value="<?php echo $kapasitas; ?>"><br>
+        <input type="number" id="kapasitas" name="kapasitas" value="<?php echo $kapasitas; ?>" required><br>
 
         <label for="fasilitas">Fasilitas:</label><br>
-        <input type="text" id="fasilitas" name="fasilitas" value="<?php echo $fasilitas; ?>"><br>
+        <input type="text" id="fasilitas" name="fasilitas" value="<?php echo $fasilitas; ?>" required><br>
 
         <label for="harga">Harga:</label><br>
-        <input type="number" id="harga" name="harga" value="<?php echo $harga; ?>"><br>
+        <input type="number" id="harga" name="harga" value="<?php echo $harga; ?>" required><br>
 
         <input type="submit" value="Submit">
     </form>

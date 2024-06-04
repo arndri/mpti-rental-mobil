@@ -40,6 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->close();
             $conn->close();
         }
+        else {
+            echo "<script>alert('Semua data harus diisi'); window.history.back();</script>";
+        }
     }
 }
 ?>
@@ -120,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Add New Paket Liburan</h1>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
     <label for="nama_paket">Nama Paket:</label><br>
-    <input type="text" id="nama_paket" name="nama_paket" value="<?php echo $nama_paket; ?>"><br>
+    <input type="text" id="nama_paket" name="nama_paket" value="<?php echo $nama_paket; ?>" required><br>
 
     <label for="jenis">Jenis Liburan:</label><br>
     <select id="jenis" name="jenis">
@@ -130,22 +133,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </select><br>
 
     <label for="gambar">Gambar:</label><br>
-    <input type="file" id="gambar" name="gambar"><br>
+    <input type="file" id="gambar" name="gambar" required><br>
 
     <label for="lokasi">Lokasi:</label><br>
-    <input type="text" id="lokasi" name="lokasi" value="<?php echo $lokasi; ?>"><br>
+    <input type="text" id="lokasi" name="lokasi" value="<?php echo $lokasi; ?>" required><br>
 
     <label for="deskripsi_paket">Deskripsi Paket:</label><br>
-    <textarea id="deskripsi_paket" name="deskripsi_paket" rows="4" cols="50"><?php echo $deskripsi_paket; ?></textarea><br>
+    <textarea id="deskripsi_paket" name="deskripsi_paket" rows="4" cols="50" required><?php echo $deskripsi_paket; ?></textarea><br>
 
     <label for="fasilitas">Fasilitas:</label><br>
-    <textarea id="fasilitas" name="fasilitas" rows="4" cols="50"><?php echo $fasilitas; ?></textarea><br>
+    <textarea id="fasilitas" name="fasilitas" rows="4" cols="50" required><?php echo $fasilitas; ?></textarea><br>
 
     <label for="harga">Harga:</label><br>
-    <input type="number" id="harga" name="harga" value="<?php echo $harga; ?>"><br>
+    <input type="number" id="harga" name="harga" value="<?php echo $harga; ?>" required><br>
 
     <label for="deskripsi_harga">Deskripsi Harga:</label><br>
-    <textarea id="deskripsi_harga" name="deskripsi_harga" rows="4" cols="50"><?php echo $deskripsi_harga; ?></textarea><br>
+    <textarea id="deskripsi_harga" name="deskripsi_harga" rows="4" cols="50" required><?php echo $deskripsi_harga; ?></textarea><br>
 
     <input type="submit" value="Submit">
 </form>

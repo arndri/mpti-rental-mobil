@@ -159,10 +159,10 @@ $conn->close();
         <label for="fasilitas">Fasilitas:</label><br>
         <input type="text" id="fasilitas" name="fasilitas" value="<?php echo $fasilitas; ?>"><br>
 
-        <label for="harga">Harga 12 Jam:</label><br>
+        <label for="harga">Harga Full:</label><br>
         <input type="number" id="harga" name="harga" value="<?php echo $harga; ?>"><br>
 
-        <label for="harga_12">Harga Full:</label><br>
+        <label for="harga_12">Harga 12 Jam:</label><br>
         <input type="number" id="harga_12" name="harga_12" value="<?php echo $harga_12; ?>"><br>
 
         <input type="submit" value="Update">
