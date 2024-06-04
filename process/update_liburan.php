@@ -158,7 +158,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
         <option value="3" <?php if ($jenis == 3) echo 'selected'; ?>>Paket 3 Hari</option>
     </select><br>
 
-    <label for="gambar">Gambar:</label><br>
+    <label for="gambar">Gambar (10mb)::</label><br>
     <input type="file" id="gambar" name="gambar"><br>
 
     <label for="lokasi">Lokasi:</label><br>

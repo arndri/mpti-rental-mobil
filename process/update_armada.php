@@ -150,7 +150,7 @@ $conn->close();
         <label for="jenis">Jenis Kendaraan:</label><br>
         <input type="text" id="jenis" name="jenis" value="<?php echo $jenis; ?>"><br>
 
-        <label for="gambar">Gambar:</label><br>
+        <label for="gambar">Gambar (10mb)::</label><br>
         <input type="file" id="gambar" name="gambar" accept="image/*"><br>
 
         <label for="kapasitas">Kapasitas:</label><br>
