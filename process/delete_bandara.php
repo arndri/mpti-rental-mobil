@@ -9,7 +9,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
     if(isset($_GET['confirm']) && $_GET['confirm'] == 'yes') {
         $sql = delete_bandara($armada_id);
         if ($conn->query($sql) === TRUE) {
-            header("Location: ../home.php");
+            echo "<script>alert('Data berhasil dihapus'); window.location.href = '../home.php';</script>";
             exit();
         } else {
             echo "Error deleting record: " . $conn->error;
