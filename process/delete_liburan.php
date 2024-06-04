@@ -13,6 +13,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
             exit();
         } else {
             echo "Error deleting record: " . $conn->error;
+            echo "<script>alert('Data gagal dihapus'); window.location.href = '../home.php';</script>";
         }
     } elseif (isset($_GET['confirm']) && $_GET['confirm'] == 'no') {
         header("Location: ../home.php");

@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             echo "Error updating record: " . $conn->error;
+            echo "<script>alert('Data gagal diubah'); window.location.href = '../home.php';</script>";
         }
     } else {
         echo "<script>alert('Semua data harus diisi'); window.history.back();</script>";

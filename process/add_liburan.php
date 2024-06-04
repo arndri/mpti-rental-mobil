@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "<script>alert('Data gagal ditambah'); window.location.href = '../home.php';</script>";
             }
             $stmt->close();
             $conn->close();
