@@ -32,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $harga = $_POST["harga"];
 
             if ($stmt->execute()) {
-                echo "<script>alert('Data berhasil ditambahkan');</script>";
-                header("Location: ../home.php");
+                echo "<script>alert('Data berhasil ditambah'); window.location.href = '../home.php';</script>";
                 exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
