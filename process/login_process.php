@@ -22,10 +22,10 @@ if ($result->num_rows > 0) {
     if (password_verify($password, $row['password'])) {
         session_start();
         $_SESSION['username'] = $username;
-        header("Location: ../home.php");
+        echo "<script>alert('Login berhasil !'); window.location.href = '../home.php';</script>";
         exit();
     } else {
-        header("Location: ../login-admin.php");
+        echo "<script>alert('Data username/password salah !'); window.location.href = '../login-admin.php';</script>";
         exit();
     }
 } else {
