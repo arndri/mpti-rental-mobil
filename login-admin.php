@@ -49,6 +49,20 @@
         input[type="submit"]:hover {
             background-color: #6b6b6b;
         }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -60,5 +74,8 @@
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
+    <div class="forgot-password">
+        <a href="forgot_password.php">Lupa Password?</a>
+    </div>
 </body>
 </html>
