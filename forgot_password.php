@@ -5,8 +5,8 @@ $conn = connect_to_db();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $questionIndex = $_POST['question'];
-    $answer = $_POST['answer'];
+    $answer1 = $_POST['answer1'];
+    $answer2 = $_POST['answer2'];
 
     $sql = "SELECT * FROM admin WHERE username=?";
 $stmt = $conn->prepare($sql);
@@ -18,12 +18,9 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 
     if ($user !== null) {
-        if ($questionIndex == 0) {
-            $storedHash = $user['jawaban1'];
-        } else {
-            $storedHash = $user['jawaban2'];
-        }
-        if (password_verify($answer, $storedHash)) {
+            $storedHash1= $user['jawaban1'];
+            $storedHash2= $user['jawaban2'];
+        if (password_verify($answer1, $storedHash1) && password_verify($answer2,$storedHash2)) {
             session_start();
             $_SESSION['username'] = $username;
             echo "<script>alert('Username tersedia'); window.location.href = 'process/forgot_password_process.php';</script>";
@@ -101,14 +98,11 @@ $stmt->close();
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
 
-        <label for="question">Security Question:</label><br>
-        <select id="question" name="question" required>
-            <option value="0">Apa mobil yang pertama direntalkan?</option>
-            <option value="1">Apa nama hewan peliharaan anda?</option>
-        </select><br>
+        <label for="answer1">Apa mobil yang pertama direntalkan?</label><br>
+        <input type="text" id="answer1" name="answer1" required><br>
 
-        <label for="answer">Answer:</label><br>
-        <input type="text" id="answer" name="answer" required><br>
+        <label for="answer2">Apa nama hewan peliharaan anda?</label><br>
+        <input type="text" id="answer2" name="answer2" required><br>
 
         <?php if (isset($error_message)) { echo "<script>alert($error_message); window.location.href = '../login-admin.php';</script>";} ?>
 
