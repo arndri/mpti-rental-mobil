@@ -3,8 +3,6 @@ include '../config.php';
 
 $conn = connect_to_db();
 
-//username = anggatransport
-//password = anggatransportadmin123
 $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 
